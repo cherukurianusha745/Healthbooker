@@ -1,0 +1,257 @@
+/* ============ NOTIFICATIONS PAGE - FORMAL STYLES ============ */
+
+/* Main Container */
+.notifications-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: calc(100vh - 200px);
+}
+
+/* Page Heading */
+.page-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+  letter-spacing: -0.3px;
+}
+
+/* Notifications List Container */
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual Notification Item */
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.notification-item:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Unread Notification Style */
+.notification-item.unread {
+  background: #f8fafc;
+  border-left: 4px solid #2563eb;
+}
+
+/* Notification Icon */
+.notification-icon {
+  width: 48px;
+  height: 48px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #475569;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.notification-item:hover .notification-icon {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+
+/* Notification Content */
+.notification-content {
+  flex: 1;
+  min-width: 0; /* Prevents text overflow issues */
+}
+
+.notification-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 8px 0;
+  word-wrap: break-word;
+}
+
+/* Notification Time */
+.notification-time {
+  font-size: 13px;
+  color: #64748b;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Unread Badge */
+.unread-badge {
+  background: #2563eb;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  margin-left: 10px;
+  align-self: center;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.empty-state p {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Animation for new notifications */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification-item {
+  animation: slideIn 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .notifications-section {
+    margin: 30px auto;
+  }
+
+  .page-heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .notification-item {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .notification-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .notification-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .unread-badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .notifications-section {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .page-heading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .notification-item {
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .notification-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+
+  .notification-content {
+    width: calc(100% - 50px);
+  }
+
+  .notification-content p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .notification-time {
+    font-size: 12px;
+  }
+
+  .unread-badge {
+    margin-left: 54px;
+    margin-top: 5px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Optional: Custom scrollbar for notifications list */
+.notifications-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notifications-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.notifications-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Print styles (if needed) */
+@media print {
+  .notification-item {
+    break-inside: avoid;
+    border: 1px solid #000;
+    page-break-inside: avoid;
+  }
+  
+  .unread-badge {
+    background: none;
+    color: #000;
+    border: 1px solid #000;
+  }
+}

@@ -1,0 +1,29 @@
+HealthBooker Application - Run Instructions
+===========================================
+
+1. Install Dependencies
+   --------------------
+   Before running the application for the first time, you must install the dependencies.
+   Open a terminal in this folder and run:
+     npm install
+   
+   Then, go to the client folder and run:
+     cd client
+     npm install
+     cd ..
+
+2. Run the Application
+   -------------------
+   You need to run BOTH the server and the client.
+   
+   Option A: Double-click the batch files
+   1. Double-click `run-server.bat` (This starts the backend)
+   2. Double-click `run-client.bat` (This starts the frontend)
+
+   Option B: Command Line
+   1. Terminal 1: npm start
+   2. Terminal 2: cd client && npm start
+
+3. Access the App
+   --------------
+   Open your browser and go to: http://localhost:3000
